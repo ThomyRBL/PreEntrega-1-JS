@@ -61,11 +61,11 @@ function cantidad1() {
 
 const ingreso1 = () => {
 
-    let ingreso = parseFloat(prompt("Ingrese la cantidad de helado: "));
+    let ingreso = parseFloat(prompt("Ingrese la cantidad de helado a ingresar: "));
 
     if (ingreso > 0) {
         cantidad = cantidad + ingreso;
-        alert("Tu cantidad de helado ahora es de: " + cantidad + " kg");
+        return alert("Tu cantidad de helado ahora es de: " + cantidad + " kg");
     } else {
         alert("Introduzca un número natural");
     }
@@ -75,8 +75,13 @@ const ingreso1 = () => {
 
 function retiro1() {
     let retiro = parseFloat(prompt("Ingrese la cantidad de helado a retirar: " + "(Tenes: " + cantidad + " kg)"));
-    cantidad = cantidad - retiro;
-    return alert("Tu cantidad de helado ahora es de: " + cantidad + " kg");
+
+    if (retiro > 0 && cantidad >= retiro) {
+        cantidad = cantidad - retiro;
+        return alert("Tu cantidad de helado ahora es de: " + cantidad + " kg");
+    } else {
+        alert("Introduzca un número natural y valido");
+    }
 }
 
 while (true) {

@@ -71,19 +71,6 @@ const ingreso1 = () => {
     }
 }
 
-//Función (Declarada con Retorno) Retiro de Helado
-
-function retiro1() {
-    let retiro = parseFloat(prompt("Ingrese la cantidad de helado a retirar: " + "(Tenes: " + cantidad + " kg)"));
-
-    if (retiro > 0 && cantidad >= retiro) {
-        cantidad = cantidad - retiro;
-        return alert("Tu cantidad de helado ahora es de: " + cantidad + " kg");
-    } else {
-        alert("Introduzca un número natural y valido");
-    }
-}
-
 while (true) {
 
     if (helado) {
@@ -101,7 +88,14 @@ while (true) {
                 break;
             //Retiro de Helado
             case "3":
-                retiro1();
+                let retiro = parseFloat(prompt("Ingrese la cantidad de helado a retirar: " + "(Tenes: " + cantidad + " kg)"));
+
+                if (retiro > 0 && cantidad >= retiro) {
+                    cantidad = cantidad - retiro;
+                    alert("Tu cantidad de helado ahora es de: " + cantidad + " kg");
+                } else {
+                    alert("Introduzca un número natural y valido");
+                }
                 break;
             //Salida
             case "4":

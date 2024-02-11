@@ -71,41 +71,38 @@ const ingreso1 = () => {
     }
 }
 
-while (true) {
+while (helado) {
 
-    if (helado) {
+    let opcion1 = prompt("Seleccione una de las siguientes opciones: \n 1) Cantidad de helado \n 2) Ingreso de helado \n 3) Venta de helado \n 4) Salir");
 
-        let opcion1 = prompt("Seleccione una de las siguientes opciones: \n 1) Cantidad de helado \n 2) Ingreso de helado \n 3) Venta de helado \n 4) Salir");
+    switch (opcion1) {
+        //Cantidad de Helado
+        case "1":
+            cantidad1();
+            break;
+        //Ingreso de Helado
+        case "2":
+            ingreso1();
+            break;
+        //Retiro de Helado
+        case "3":
+            let retiro = parseFloat(prompt("Ingrese la cantidad de helado a retirar: " + "(Tenes: " + cantidad + " kg)"));
 
-        switch (opcion1) {
-            //Cantidad de Helado
-            case "1":
-                cantidad1();
-                break;
-            //Ingreso de Helado
-            case "2":
-                ingreso1();
-                break;
-            //Retiro de Helado
-            case "3":
-                let retiro = parseFloat(prompt("Ingrese la cantidad de helado a retirar: " + "(Tenes: " + cantidad + " kg)"));
-
-                if (retiro > 0 && cantidad >= retiro) {
-                    cantidad = cantidad - retiro;
-                    alert("Tu cantidad de helado ahora es de: " + cantidad + " kg");
-                } else {
-                    alert("Introduzca un número natural y valido");
-                }
-                break;
-            //Salida
-            case "4":
-                alert("Hasta la proxima! Vuelva pronto!");
-                helado = false;
-                break;
-            //Ingreso incorrecto
-            default:
-                alert("Ingreso Incorrecto");
-                break;
-        }
+            if (retiro > 0 && cantidad >= retiro) {
+                cantidad = cantidad - retiro;
+                alert("Tu cantidad de helado ahora es de: " + cantidad + " kg");
+            } else {
+                alert("Introduzca un número natural y valido");
+            }
+            break;
+        //Salida
+        case "4":
+            alert("Hasta la proxima! Vuelva pronto!");
+            helado = false;
+            break;
+        //Ingreso incorrecto
+        default:
+            alert("Ingreso Incorrecto");
+            break;
     }
 }

@@ -51,12 +51,6 @@ while (true) {
 
 let cantidad = 1000;
 
-//Función (Declarada) Cantidad de Helado
-
-function cantidad1() {
-    alert("Tu cantidad de helado es de: " + cantidad + " kg");
-}
-
 //Función (Flecha) Ingreso de Helado
 
 const ingreso1 = () => {
@@ -78,7 +72,7 @@ while (helado) {
     switch (opcion1) {
         //Cantidad de Helado
         case "1":
-            cantidad1();
+            alert("Tu cantidad de helado es de: " + cantidad + " kg");
             break;
         //Ingreso de Helado
         case "2":
